@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'react-toastify/dist/ReactToastify.css';
+@font-face {
+    font-family: "Helvetica";
+    src: url(../../public/font/Helvetica.ttf),
+      url(../../public/font/Helvetica-Bold.ttf) format("truetype"),
+      url(../../public/font/Helvetica-Oblique.ttf) format("truetype"),
+      
+  }
+  body {
+    font-family: "Helvetica", sans-serif !important;
+  }
+  :root {
+    scroll-behavior: smooth;
+  }
+  .nav-scroll {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s linear;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+  } 
+  .shadow-border{
+    box-shadow: inset -0.1px -0.8px 5px rgba(255, 255, 255, 0.26) , inset 0px 4px 2px rgba(92, 91, 91, 0.508);
+  }
+  .Toastify__toast-body{
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 1rem;
+    gap: 5px;
+    
+  }

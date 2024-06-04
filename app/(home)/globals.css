@@ -1,14 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import 'react-toastify/dist/ReactToastify.css';
 @font-face {
     font-family: "Helvetica";
-    src: url(../public/font/Helvetica.ttf),
-      url(../public/font/Helvetica-Bold.ttf) format("truetype"),
-      url(../public/font/Helvetica-Oblique.ttf) format("truetype"),
+    src: url(../../public/font/Helvetica.ttf),
+      url(../../public/font/Helvetica-Bold.ttf) format("truetype"),
+      url(../../public/font/Helvetica-Oblique.ttf) format("truetype"),
       
   }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
   body {
     font-family: "Helvetica", sans-serif !important;
   }
@@ -26,3 +31,5 @@
     backdrop-filter: blur(7.7px);
     -webkit-backdrop-filter: blur(7.7px);
   } 
+  
+  
