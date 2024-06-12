@@ -1,6 +1,7 @@
 "use server";
 
-import { postFetch } from "@/utils/fetch";
+import { getFetch, postFetch } from "@/utils/fetch";
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
 async function login(state, formData) {
@@ -26,7 +27,7 @@ async function login(state, formData) {
       status: data.status,
       message: "You are logged in",
     };
-  } else if (data.status === "error") {
+  } else {
     return {
       status: data.status,
       message: data.message,
@@ -42,9 +43,47 @@ if(!token){
   }
 }
 
-const data = await postFetch('')
+const data = await getFetch('/profile')
 if(data.status === 'success'){
-  
+  return{
+    user : data.data
+  }
+}else{
+  return{
+    error : "user Forbidden"
+  }
 }
 }
-export { login , me };
+
+async function createUser(state, formData){
+  const name = formData.get("name")
+  const family = formData.get("family")
+  const bio = formData.get("bio")
+  const cv = formData.get("cv")
+  const profile = formData.get("profile")
+
+if(name === ''){
+  return {
+    status: "error",
+    message: 'The name field is mandatory'
+  }
+}
+if(family === ''){
+  return {
+    status: "error",
+    message: 'The family field is mandatory'
+  }
+}
+if(bio === ''){
+  return {
+    status: "error",
+    message: 'The Biography field is mandatory'
+  }
+}
+
+
+const data = await postFetch("/admin/team/store", { name, family , bio , cv , profile });
+revalidatePath('/users');
+ 
+}
+export { login , me ,createUser};

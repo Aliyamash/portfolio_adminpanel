@@ -2,15 +2,14 @@
 
 import { login } from "@/actions/auth";
 import SubmitButton from "@/components/form/SubmitButton";
-import Sidebar from "@/components/layout/Sidebar";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
-
 export default function loginPage () {
 
 const [state , formAction] = useFormState(login , {});
+
 const router = useRouter()
 useEffect(() => {
 
@@ -19,7 +18,7 @@ useEffect(() => {
         router.push('/')
     }
   }, [state])
-
+ 
 return(
     <div className="container mx-auto">
         <div className="p-32 ">

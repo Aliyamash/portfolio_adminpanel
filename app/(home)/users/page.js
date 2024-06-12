@@ -6,8 +6,8 @@ export default function usersPage (){
          <div className="mx-12 mt-16 text-xl ">
             <div className="">
                 <div className="mb-5 flex justify-between">
-                    <p className="text-5xl ml-5">Users</p>
-                    <Link className="transition duration-500 bg-gray-600 text-white border p-4 rounded-2xl focus:bg-white focus:text-black" href={'/users/create'}>Create User</Link>
+                    <p className="text-5xl ml-5 ">Users</p>
+                    <Link className="transition duration-500 bg-gray-600 text-white border p-4 rounded-2xl focus:bg-white focus:text-black cursor-pointer" href={'/users/create'}>Create User</Link>
                     
                 </div>
                 <hr />
