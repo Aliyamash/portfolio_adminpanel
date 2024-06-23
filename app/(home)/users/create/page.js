@@ -31,8 +31,6 @@ useEffect(() => {
     }
     const objectUrls = tmp;
     setPreviews(objectUrls);
-
-    console.log(files);
     
   }, [files]);
     

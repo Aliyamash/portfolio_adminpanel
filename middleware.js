@@ -15,6 +15,7 @@ export const config = {
     matcher: [
         '/',
         '/users',
-        '/users/create'
+        '/users/create',
+        '/users/cv'
     ]
 }

@@ -5,7 +5,6 @@ import { useContext } from "react";
 import AuthContext from "@/context/AuthContext";
 export default function Header () {
     const { user } = useContext(AuthContext);
-    console.log(user);
     return (
         <>
             <div className="flex justify-between rounded-xl border text-lg mb-5 shadow shadow-lg bg-gray-200 z-50">
