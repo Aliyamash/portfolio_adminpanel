@@ -98,7 +98,7 @@ console.log(newFormData);
     };
   }
 
-  const data = await postFetchUser("/admin/team/store",  formData);
+  const data = await postFetchUser("/admin/team/store",  newFormData);
   console.log(data);
 } catch (error) {
   console.log(error);
